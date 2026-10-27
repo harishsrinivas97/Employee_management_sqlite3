@@ -12,8 +12,8 @@ app.secret_key = "my-secret-key"
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'   # Gmail SMTP server
 app.config['MAIL_PORT'] = 587                 # Mail server port
 app.config['MAIL_USE_TLS'] = True             # Use TLS encryption
-app.config['MAIL_USERNAME'] = "22a31a4457@gmail.com"  # Sender email
-app.config['MAIL_PASSWORD'] = "wohe dvoo gwdv ftgo"     # App Password from Gmail
+app.config['MAIL_USERNAME'] = "# Sender email"
+app.config['MAIL_PASSWORD'] = "# App Password from Gmail"
 
 mail = Mail(app)  # Initialize Flask-Mail with app
 
