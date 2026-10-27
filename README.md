@@ -7,7 +7,7 @@ This is the existing Flask Employee Management System converted from MySQL to SQ
 - `app.py` — Flask app using SQLite3 (`company.db`).
 - `init_db.py` — creates the SQLite database and tables from `schema.sql`.
 - `schema.sql` — definitions for the existing `users` and `employee` tables.
-- `migrate_mysql_to_sqlite.py` — one-time transfer of existing MySQL records to SQLite.
+- `sqlite.py` — one-time transfer of existing MySQL records to SQLite.
 - `templates/`, `static/` — original design files.
 
 ## Run it and preserve existing MySQL data
