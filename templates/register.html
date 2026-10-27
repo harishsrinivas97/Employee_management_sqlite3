@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Create Account - EmployeeHub{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <div class="auth-icon"><i class="fas fa-user-plus"></i></div>
+            <h2>Create Account</h2>
+            <p>Join EmployeeHub to manage your workforce</p>
+        </div>
+        <form action="/add_Manager" method="POST" id="registerForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" id="name" placeholder="John Doe" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Work Email</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="john@company.com" required autocomplete="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Create a secure password" required minlength="8" autocomplete="new-password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-shield-halved"></i>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required minlength="8" autocomplete="new-password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="role">Role / Position</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-briefcase"></i>
+                    <input type="text" name="role" id="role" placeholder="e.g. Operations Manager">
+                </div>
+            </div>
+            <button type="submit" class="btn-primary btn-full">
+                <i class="fas fa-user-check"></i> Create Account
+            </button>
+        </form>
+        <div class="auth-footer">
+            <p>Already have an account? <a href="/login">Sign In</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirm_password");
+
+    function validatePasswordMatch() {
+        if (confirmPasswordInput.value && passwordInput.value !== confirmPasswordInput.value) {
+            confirmPasswordInput.setCustomValidity("Passwords do not match");
+        } else {
+            confirmPasswordInput.setCustomValidity("");
+        }
+    }
+
+    if (passwordInput && confirmPasswordInput) {
+        passwordInput.addEventListener("change", validatePasswordMatch);
+        confirmPasswordInput.addEventListener("keyup", validatePasswordMatch);
+        confirmPasswordInput.addEventListener("input", validatePasswordMatch);
+    }
+</script>
+{% endblock %}

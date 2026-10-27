@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Employee Management{% endblock %}
+
+{% block content %}
+<section class="hero-section hero-small">
+    <div class="hero-content">
+        <h1>About <span class="text-gradient">EmployeeHub</span></h1>
+        <p class="hero-subtitle">Building the future of workforce management</p>
+    </div>
+</section>
+
+<div class="about-content">
+    <div class="about-card">
+        <div class="about-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Our Objective</h3>
+        <p>The main objective of this project is to simplify employee data management and provide an easy-to-use platform for managing employee information.</p>
+    </div>
+
+    <div class="about-card">
+        <div class="about-icon"><i class="fas fa-star"></i></div>
+        <h3>Key Features</h3>
+        <ul class="feature-list">
+            <li>User Registration & Authentication</li>
+            <li>Secure Login System</li>
+            <li>Employee Information Management</li>
+            <li>View & Search Employee Details</li>
+            <li>Database Management</li>
+            <li>Password Reset via Email</li>
+        </ul>
+    </div>
+
+    <div class="about-card">
+        <div class="about-icon"><i class="fas fa-code"></i></div>
+        <h3>Technologies Used</h3>
+        <div class="tech-badges">
+            <span class="badge tech">HTML5</span>
+            <span class="badge tech">CSS3</span>
+            <span class="badge tech">Python</span>
+            <span class="badge tech">Flask</span>
+            <span class="badge tech">MySQL</span>
+            <span class="badge tech">Jinja2</span>
+        </div>
+    </div>
+
+    <div class="about-card mission">
+        <div class="about-icon"><i class="fas fa-rocket"></i></div>
+        <h3>Our Mission</h3>
+        <p>Our mission is to make employee information management simple, efficient, and accessible through a web-based application.</p>
+    </div>
+
+    <div class="text-center" style="margin-top: 30px;">
+        <a href="/login" class="btn-primary"><i class="fas fa-right-to-bracket"></i> Get Started</a>
+    </div>
+</div>
+{% endblock %}

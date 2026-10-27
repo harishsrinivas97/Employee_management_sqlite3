@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Employee{% endblock %}
+
+{% block content %}
+<div class="form-page-container">
+    <div class="form-card">
+        <div class="form-header">
+            <div class="form-icon edit"><i class="fas fa-user-pen"></i></div>
+            <h2>Edit Employee</h2>
+            <p>Update employee information below</p>
+        </div>
+        <form action="/edit_employee/{{employee[0]}}" method="post">
+            <div class="form-group">
+                <label>Employee Name</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="ename" value="{{employee[1]}}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Department</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-building"></i>
+                    <input type="text" name="edept" value="{{employee[2]}}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Salary</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-indian-rupee-sign"></i>
+                    <input type="number" name="esalary" value="{{employee[3]}}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" name="ephone" value="{{employee[4]}}" pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+            </div>
+            <input type="submit" value="Update Employee" class="btn-primary btn-full">
+        </form>
+    </div>
+</div>
+{% endblock %}

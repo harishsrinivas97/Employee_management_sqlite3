@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}EmployeeHub - Modern Workforce Management{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-content">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: #eef2ff; color: #4f46e5; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 9999px; margin-bottom: 20px; border: 1px solid #c7d2fe;">
+            <i class="fas fa-sparkles"></i> Modern Workforce Management Platform
+        </div>
+        <h1>Employee Management <span class="text-gradient">Made Effortless</span></h1>
+        <p class="hero-subtitle">Streamline your team operations with our modern, secure, and intuitive platform. Track records, manage roles, and optimize workforce productivity seamlessly.</p>
+        {% if not session.get('logged_in') %}
+        <div class="hero-buttons">
+            <a href="/register" class="btn-primary"><i class="fas fa-user-plus"></i> Get Started</a>
+            <a href="/login" class="btn-outline"><i class="fas fa-right-to-bracket"></i> Sign In</a>
+        </div>
+        {% else %}
+        <div class="hero-buttons">
+            <a href="/dashboard" class="btn-primary"><i class="fas fa-gauge"></i> Go to Dashboard</a>
+            <a href="/view_employees" class="btn-outline"><i class="fas fa-users"></i> View Directory</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="features-section">
+    <h2>Built for Modern Teams & Managers</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-id-card-clip"></i></div>
+            <h3>Employee Profiles</h3>
+            <p>Maintain centralized employee profiles with comprehensive contact details, departments, and payroll information in one secure dashboard.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+            <h3>Secure Role Access</h3>
+            <p>Enterprise-grade authentication and manager-specific data isolation protect your sensitive organizational workforce records.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <h3>Fast Management</h3>
+            <p>Instantly register new hires, update employee records, and manage your workforce with streamlined workflows designed for speed.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
